@@ -3,6 +3,8 @@
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', dirname(dirname(__FILE__)));
 
-$uri = $_SERVER['REQUEST_URI'];
+require_once(ROOT.DS.'lib'.DS.'init.php');
 
-print_r($uri);
+$router = new Router($_SERVER['REQUEST_URI']);
+
+echo '<p>Config site_name: <code>' . Config::get('site_name') . '</code></p>';
