@@ -2,6 +2,7 @@
 
 class Config
 {
+
     protected static $settings = array();
 
     public static function get($key)
@@ -13,4 +14,5 @@ class Config
     {
         self::$settings[$key] = $value;
     }
+
 }
