@@ -1,9 +1,11 @@
 <?php
 
-class Controller
-{
+class Controller{
+
     protected $data;
+
     protected $model;
+
     protected $params;
 
     /**
@@ -31,4 +33,5 @@ class Controller
         $this->data = $data;
         $this->params = App::getRouter()->getParams();
     }
+
 }

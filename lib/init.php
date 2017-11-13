@@ -8,11 +8,11 @@ function __autoload($class_name){
     $model_path = ROOT.DS.'models'.DS.strtolower($class_name).'.php';
 
     if ( file_exists($lib_path) ){
-        require_once $lib_path;
-    } elseif ( file_exists($controllers_path) && (!class_exists($class_name)) ){
-        require_once $controllers_path;
-    } elseif ( file_exists($model_path) && (!class_exists($class_name)) ){
-        require_once $model_path;
+        require_once($lib_path);
+    } elseif ( file_exists($controllers_path) ){
+        require_once($controllers_path);
+    } elseif ( file_exists($model_path) ){
+        require_once($model_path);
     } else {
         throw new Exception('Failed to include class: '.$class_name);
     }
