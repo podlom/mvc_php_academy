@@ -8,7 +8,8 @@ class PagesController extends Controller
         $this->data['test_content'] = 'Here will be a pages list';
     }
 
-    public function view(){
+    public function view()
+    {
         $params = App::getRouter()->getParams();
 
         if ( isset($params[0]) ){
