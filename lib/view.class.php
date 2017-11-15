@@ -1,14 +1,12 @@
 <?php
 
-class View
-{
+class View{
 
     protected $data;
 
     protected $path;
 
-    protected static function getDefaultViewPath()
-    {
+    protected static function getDefaultViewPath(){
         $router = App::getRouter();
         if ( !$router ){
             return false;
@@ -19,8 +17,7 @@ class View
         return VIEWS_PATH.DS.$controller_dir.DS.$template_name;
     }
 
-    public function __construct($data = array(), $path = null)
-    {
+    public function __construct($data = array(), $path = null){
         if ( !$path ){
             $path = self::getDefaultViewPath();
         }
@@ -31,8 +28,7 @@ class View
         $this->data = $data;
     }
 
-    public function render()
-    {
+    public function render(){
         $data = $this->data;
 
         ob_start();
