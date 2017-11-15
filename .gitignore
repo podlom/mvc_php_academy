@@ -1,1 +1,4 @@
+# PHPStorm configs
 .idea/*
+# npm vendor packages bootstrap, jquery, etc...
+webroot/node_modules/*

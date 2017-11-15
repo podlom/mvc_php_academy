@@ -1,6 +1,6 @@
 <?php
 
-Config::set('site_name', 'Your Site Name');
+Config::set('site_name', 'MVC Powered Site Name');
 
 Config::set('languages', array('en', 'fr', 'ru', 'uk'));
 
