@@ -1,7 +1,6 @@
 <?php
 
-class App
-{
+class App{
 
     protected static $router;
 
@@ -10,13 +9,11 @@ class App
     /**
      * @return mixed
      */
-    public static function getRouter()
-    {
+    public static function getRouter(){
         return self::$router;
     }
 
-    public static function run($uri)
-    {
+    public static function run($uri){
         self::$router = new Router($uri);
 
         self::$db = new DB(Config::get('db.host'), Config::get('db.user'), Config::get('db.password'), Config::get('db.db_name'));
