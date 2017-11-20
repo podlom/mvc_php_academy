@@ -1,6 +1,7 @@
 <?php
 
-class PagesController extends Controller{
+class PagesController extends Controller
+{
 
     public function __construct($data = array())
     {
@@ -41,8 +42,8 @@ class PagesController extends Controller{
         }
     }
 
-    public function admin_edit(){
-
+    public function admin_edit()
+    {
         if ( $_POST ){
             $id = isset($_POST['id']) ? $_POST['id'] : null;
             $result = $this->model->save($_POST, $id);
@@ -62,7 +63,8 @@ class PagesController extends Controller{
         }
     }
 
-    public function admin_delete(){
+    public function admin_delete()
+    {
         if ( isset($this->params[0]) ){
             $result = $this->model->delete($this->params[0]);
             if ( $result ){

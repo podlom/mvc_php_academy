@@ -30,8 +30,12 @@ class Page extends Model
 
     public function save($data, $id = null)
     {
-        if ( empty($data['alias']) || empty($data['title']) || empty($data['content']) ){
+        if ( !isset($data['alias']) || !isset($data['title']) || !isset($data['content']) ){
             return false;
+        }
+
+        if (! User::isLoggedAdmin()) {
+            Router::redirect('/admin/users/login');
         }
 
         $id = (int)$id;
@@ -64,6 +68,10 @@ class Page extends Model
 
     public function delete($id)
     {
+        if (! User::isLoggedAdmin()) {
+            Router::redirect('/admin/users/login');
+        }
+
         $id = (int)$id;
         $sql = "delete from pages where id = {$id}";
         return $this->db->query($sql);

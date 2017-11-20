@@ -22,6 +22,6 @@ function __($key, $default_value = '') {
     return Lang::get($key, $default_value);
 }
 
-if (! session_id()) {
+/* if (empty(session_id())) {
     session_start();
-}
+} */
