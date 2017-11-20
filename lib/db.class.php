@@ -1,12 +1,10 @@
 <?php
 
-class DB
-{
+class DB{
 
     protected $connection;
 
-    public function __construct($host, $user, $password, $db_name)
-    {
+    public function __construct($host, $user, $password, $db_name){
         $this->connection = new mysqli($host, $user, $password, $db_name);
 
         if( mysqli_connect_error() ){
@@ -14,8 +12,7 @@ class DB
         }
     }
 
-    public function query($sql)
-    {
+    public function query($sql){
         if ( !$this->connection ){
             return false;
         }
@@ -37,8 +34,7 @@ class DB
         return $data;
     }
 
-    public function escape($str)
-    {
+    public function escape($str){
         return mysqli_escape_string($this->connection, $str);
     }
 
